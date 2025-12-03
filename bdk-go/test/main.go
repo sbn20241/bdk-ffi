@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	bdk "github.com/bitcoindevkit/bdk-go"
+	bdk "github.com/sbn20241/bdk-ffi/bdk-go/bdk"
 )
 
 func main() {
