@@ -447,7 +447,7 @@ pub enum Satisfaction {
         m: u64,
         items: Vec<u64>,
         sorted: Option<bool>,
-        conditions: HashMap<Vec<u32>, Vec<Condition>>,
+        conditions: HashMap<String, Vec<Condition>>,
     },
     Complete {
         condition: Condition,
@@ -496,7 +496,11 @@ impl From<BdkSatisfaction> for Satisfaction {
                     .into_iter()
                     .map(|(index, conditions)| {
                         (
-                            index.iter().map(|e| e.to_owned() as u32).collect(),
+                            // Serialize Vec<u32> to comma-separated string
+                            index.iter()
+                                .map(|e| e.to_string())
+                                .collect::<Vec<_>>()
+                                .join(","),
                             conditions.into_iter().map(|e| e.into()).collect(),
                         )
                     })

@@ -785,7 +785,7 @@ interface LockTime {
 [Enum]
 interface Satisfaction {
     Partial(u64 n, u64 m, sequence<u64> items, boolean? sorted, record<u32, sequence<Condition>> conditions);
-    PartialComplete(u64 n, u64 m, sequence<u64> items, boolean? sorted, record<sequence<u32>, sequence<Condition>> conditions);
+    PartialComplete(u64 n, u64 m, sequence<u64> items, boolean? sorted, record<string, sequence<Condition>> conditions);
     Complete(Condition condition);
     None(string msg);
 };
