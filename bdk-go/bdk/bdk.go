@@ -2,8 +2,9 @@ package bdk
 
 /*
 #cgo CFLAGS: -I${SRCDIR}
-#cgo LDFLAGS: -L${SRCDIR}/../../bdk-ffi/target/release -lbdkffi -lm -ldl
+#cgo LDFLAGS: -lbdkffi -lm -ldl
 #cgo darwin LDFLAGS: -framework CoreFoundation -framework Security
+#cgo LDFLAGS: -L${SRCDIR}/../../bdk-ffi/target/release
 #include "bdk.h"
 */
 import "C"
